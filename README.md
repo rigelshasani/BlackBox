@@ -7,7 +7,7 @@ Collaborators:
     Vladyslav Savchyn
   </li>
   <li>
-    Gananjeet Vaid
+    Gaganjeet Singh Vaid
   </li>
   <li>
     Aanand Aman
