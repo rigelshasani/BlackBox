@@ -1,6 +1,6 @@
-# PRJ566Project
+# PRJ666Project
 
-***In this project we will be working on a [Messaging App], for the course of PRJ566. Our group is named Group 2***
+***In this project we will be working on a [Messaging App], for the course of PRJ666.**
 <ul>
 Collaborators:
   <li>
