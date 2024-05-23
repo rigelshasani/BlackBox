@@ -10,62 +10,62 @@ import { BsGithub, BsGoogle } from "react-icons/bs";
 type variant = 'LOGIN' | 'REGISTER';
 
 const AuthForm = () => {
-    const [variant, setVariant] = useState<variant>('LOGIN');
-    const [isLoading, setIsLoading] = useState(false);
+  const [variant, setVariant] = useState<variant>('LOGIN');
+  const [isLoading, setIsLoading] = useState(false);
 
-const toggleVariant = useCallback(() => {
-  if (variant =='LOGIN') {
-    setVariant('REGISTER');
-  } else {
-    setVariant('LOGIN');
-  }
-}, [variant]);
+  const toggleVariant = useCallback(() => {
+    if (variant == 'LOGIN') {
+      setVariant('REGISTER');
+    } else {
+      setVariant('LOGIN');
+    }
+  }, [variant]);
 
-const {
+  const {
     register,
     handleSubmit,
     formState: {
-        errors
+      errors
     }
-} = useForm<FieldValues>({
+  } = useForm<FieldValues>({
     defaultValues: {
-        name: '',
-        email: '',
-        password: ''
+      name: '',
+      email: '',
+      password: ''
     }
-});
+  });
 
 
-const onSubmit: SubmitHandler<FieldValues> = (data) => {
+  const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
-    if(variant == 'REGISTER'){
+    if (variant == 'REGISTER') {
       // Axios Register 
     }
 
     if (variant == 'LOGIN') {
-        // NextAuth SingIn
+      // NextAuth SingIn
     }
 
     const socialAction = (action: string) => {
-        setIsLoading(true);
-       
-        // NextAuth Social Sign In 
+      setIsLoading(true);
+
+      // NextAuth Social Sign In 
 
     }
-}
-    return (
-      <div
-        className="
+  }
+  return (
+    <div
+      className="
            mt-8
            sm:mx-auto
            sm:w-full
            sm:max-w-md
            "
-           
-        >
-            <div
-               className="
+
+    >
+      <div
+        className="
                bg-white
                px-4
                py-8
@@ -73,88 +73,91 @@ const onSubmit: SubmitHandler<FieldValues> = (data) => {
                sm:rounded-lg
                sm:px-10
                "
-               >
-                <form
-                className="space-y-6" 
-                onSubmit={handleSubmit(onSubmit)}>
-                  {variant == 'REGISTER' && (
-                  <Input 
-                  label="Name"
-                  id="name" 
-                  register={register}
-                  errors={errors}
-                  /> 
-    )} 
-                  <Input 
-                  label="Email"
-                  id="email address" 
-                  type="email"
-                  register={register}
-                  errors={errors}
-    />
-    <Input 
-                  label="password"
-                  id="Password" 
-                  type="password"
-                  register={register}
-                  errors={errors}
-                  />
-                  <div>
-                    <Button
-                    disabled={isLoading}
-                    fullWidth
-                    type="submit"
-                    >
-                      {variant == 'LOGIN' ? 'Sign in' : 'Register'}
-                    </Button>
-                  </div>
-                </form>
-                <div className="mt-6">
-                  <div className="relative">
-                    <div
-                      className="
+      >
+        <form
+          className="space-y-6"
+          onSubmit={handleSubmit(onSubmit)}>
+          {variant == 'REGISTER' && (
+            <Input
+              label="Name"
+              id="name"
+              register={register}
+              errors={errors}
+              disabled={isLoading}
+            />
+          )}
+          <Input
+            label="Email"
+            id="email address"
+            type="email"
+            register={register}
+            errors={errors}
+            disabled={isLoading}
+          />
+          <Input
+            label="password"
+            id="Password"
+            type="password"
+            register={register}
+            errors={errors}
+            disabled={isLoading}
+          />
+          <div>
+            <Button
+              disabled={isLoading}
+              fullWidth
+              type="submit"
+            >
+              {variant == 'LOGIN' ? 'Sign in' : 'Register'}
+            </Button>
+          </div>
+        </form>
+        <div className="mt-6">
+          <div className="relative">
+            <div
+              className="
                           absolute
                           insert-0
                           flex
                           items-center
                           "
-                          >
-                            <div 
-                            className="
+            >
+              <div
+                className="
                             w-full 
                             border-t
                             border-gray-300"
-                            />
+              />
 
-                          </div>
-                          <div className="relative 
+            </div>
+            <div className="relative 
                           flex
                            justify-center
                             text-sm
                             "
-                            >
-                            <span className="
+            >
+              <span className="
                             bg-white
                             px-2
                             text-gray-500">
-                              Or continue with 
-                            </span>
-                          </div>
-                  </div>
-                  <div className="mt-6 flex gap-2">
-                    <AuthSocialButton 
-                        icon={BsGithub}
-                        onClick={( ) => socialAction('github')}
-                        />
-                    <AuthSocialButton 
-                        icon={BsGoogle}
-                        onClick={( ) => socialAction('google')}
-                        />
+                Or continue with
+              </span>
+            </div>
+          </div>
+          <div className="mt-6 flex gap-2">
+            <AuthSocialButton
+              icon={BsGithub}
+              onClick={() => socialAction('github')}
+            />
+            <AuthSocialButton
+              icon={BsGoogle}
+              onClick={() => socialAction('google')}
+            />
 
-                  </div>
-                </div>
+          </div>
+        </div>
 
-                <div className="
+        <div className="
                   flex
                   gap-2
                   justify-center
@@ -163,22 +166,22 @@ const onSubmit: SubmitHandler<FieldValues> = (data) => {
                   px-2
                   text-gray-500
                   ">
-                    <div>
-                      {variant == 'LOGIN' ? 'New to Messanger?' : 'Already have an account?'}
-                    </div>
-                    <div
-                        onClick={toggleVariant}
-                        className="underline cursor-pointer"
-                        >
-                          {variant == 'LOGIN' ? 'Create an account' : 'Login'}
+          <div>
+            {variant == 'LOGIN' ? 'New to Messanger?' : 'Already have an account?'}
+          </div>
+          <div
+            onClick={toggleVariant}
+            className="underline cursor-pointer"
+          >
+            {variant == 'LOGIN' ? 'Create an account' : 'Login'}
 
-                    </div>
+          </div>
 
-                </div>
-               </div>
-           
         </div>
-    );
+      </div>
+
+    </div>
+  );
 }
 
 export default AuthForm;
