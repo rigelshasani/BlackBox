@@ -1,21 +1,47 @@
-# PRJ666Project
+# BlackBox Project
 
-`As system development goes on, more issues might be created and added to corresponding milestones.` 
-
-
-***In this project we will be working on BlackBox, a messaging app with a focus on cryptography, for the course of PRJ666.**
-<ul>
+### In this project we will be working on BlackBox, a messaging app with a focus on cryptography, for the course of PRJ666.
 Collaborators:
-  <li>
-    Vrushank Janakkumar
-  </li>
-  <li>
-    Gaganjeet Singh Vaid
-  </li>
+<ul>
   <li>
     Aanand Aman
   </li>
   <li>
     Rigels Hasani
   </li>
+  <li>
+    Gaganjeet Singh Vaid
+  </li>
+  <li>
+    Vrushank Janakkumar
+  </li>
 </ul>
+
+
+To see our progress, please ```git clone``` the repo and then ```cd``` into it. </br>
+
+After that, here's how to run the application: </br>
+```
+npm install
+```
+^ This installs the node modules neccessary to run the app. <br/>
+```
+npm run dev
+```
+^ This starts the web application <br/>
+
+
+
+
+## Here we will provide the progress for our application, on a week to week basis.
+
+### Week 3
+
+Aanand's work here
+
+### Week 4
+
+Rigels' work here
+
+### Week 5
+
