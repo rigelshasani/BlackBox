@@ -42,6 +42,8 @@ const AuthForm = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
+    console.log(data);
+
     if (variant == 'REGISTER') {
        axios.post('/api/register', data)
        .catch(() => toast.error('Something went wrong!'))
@@ -116,16 +118,16 @@ const socialAction = (action: string) => {
             />
           )}
           <Input
-            label="Email"
-            id="email address"
+            label="Email address"
+            id="email"
             type="email"
             register={register}
             errors={errors}
             disabled={isLoading}
           />
           <Input
-            label="password"
-            id="Password"
+            label="Password"
+            id="password"
             type="password"
             register={register}
             errors={errors}
