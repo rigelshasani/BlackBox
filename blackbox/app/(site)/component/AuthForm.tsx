@@ -42,48 +42,56 @@ const AuthForm = () => {
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
 
-    console.log(data);
 
     if (variant == 'REGISTER') {
-       axios.post('/api/register', data)
-       .catch(() => toast.error('Something went wrong!'))
-       .finally(() => setIsLoading(false))
+      axios.post('/api/register', data)
+        .then((response) => {
+        })
+        .catch((error) => {
+          if (error.response && error.response.status === 400) {
+            toast.error(error.response.data);
+          } else {
+            toast.error('Registration Failed. Please Enter Correct Values');
+          }
+        })
+        .finally(() => setIsLoading(false));
     }
 
-    if (variant =='LOGIN') {
+
+    if (variant == 'LOGIN') {
 
       signIn('credentials', {
-        ... data,
+        ...data,
         redirect: false
       })
-      .then((callback) => {
-      if (callback?.error) {
-        toast.error('Invalid credentials');
-      }
-      
-      if (callback?.ok && !callback?.error) { 
-        toast.success('Logged in!')
-      }
-    })
-    .finally(() => setIsLoading(false));
+        .then((callback) => {
+          if (callback?.error) {
+            toast.error('Invalid credentials');
+          }
+
+          if (callback?.ok && !callback?.error) {
+            toast.success('Logged in!')
+          }
+        })
+        .finally(() => setIsLoading(false));
+    }
   }
-}
 
-const socialAction = (action: string) => {
-  setIsLoading(true);
+  const socialAction = (action: string) => {
+    setIsLoading(true);
 
-  signIn(action, { redirect: false })
-  .then((callback) => {
-    if (callback?.error) {
-      toast.error('Invalid Credentials');
-    }
+    signIn(action, { redirect: false })
+      .then((callback) => {
+        if (callback?.error) {
+          toast.error('Invalid Credentials');
+        }
 
-    if (callback?.ok && !callback?.error) { 
-      toast.success ('Logged in!')
-    }
-  })
-  .finally(() => setIsLoading(false));
-}
+        if (callback?.ok && !callback?.error) {
+          toast.success('Logged in!')
+        }
+      })
+      .finally(() => setIsLoading(false));
+  }
 
   return (
     <div
@@ -92,12 +100,13 @@ const socialAction = (action: string) => {
            sm:mx-auto
            sm:w-full
            sm:max-w-md
+           rounded-lg
+           bg-neutral-950 
            "
 
     >
       <div
         className="
-               bg-white
                px-4
                py-8
                shadow
@@ -110,7 +119,7 @@ const socialAction = (action: string) => {
           onSubmit={handleSubmit(onSubmit)}>
           {variant == 'REGISTER' && (
             <Input
-              label="Name"
+              label="Name or Username"
               id="name"
               register={register}
               errors={errors}
@@ -118,7 +127,7 @@ const socialAction = (action: string) => {
             />
           )}
           <Input
-            label="Email address"
+            label="Email Address"
             id="email"
             type="email"
             register={register}
@@ -168,9 +177,9 @@ const socialAction = (action: string) => {
                             "
             >
               <span className="
-                            bg-white
+                            bg-neutral-
                             px-2
-                            text-gray-500">
+                            text-white">
                 Or continue with
               </span>
             </div>
@@ -195,10 +204,10 @@ const socialAction = (action: string) => {
                   text-sm
                   mt-6
                   px-2
-                  text-gray-500
+                  text-white
                   ">
           <div>
-            {variant == 'LOGIN' ? 'New to Messenger?' : 'Already have an account?'}
+            {variant == 'LOGIN' ? 'New to Blackbox?' : 'Already have an account?'}
           </div>
           <div
             onClick={toggleVariant}
