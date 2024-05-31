@@ -3,6 +3,8 @@ import Image from "next/image";
 import AuthForm from "./component/AuthForm";
 
 //Homepage 
+// TODO: Welcome Page with greetings
+
 
 export default function Home() {
     return (
