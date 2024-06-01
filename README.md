@@ -62,6 +62,20 @@ npm run dev
 </ul>
 
 
+<ul>
+  <li>
+   Extension Installed During Work: 
+  </li>
+   <li>
+  <i>Tailwind CSS IntelliSense </i> 
+  </li>
+   <li>
+   <i>Prisma </i>
+  </li>
+  
+</ul>
+
+
 ### Week 4
 
 Created registration authentication options using Prisma and NextAuth, which offered a host of Authentication Providers. In our case we chose Github and Google, and an option to create an account using name, email and password. This information is then fed into Prisma's database after being hashed by bcrypt's hashing function for user security and database integrity. Authentication from the Providers is fed using specially made clients which handle the communication of our backend with the Authenticators. </br> 
