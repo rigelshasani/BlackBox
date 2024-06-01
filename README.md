@@ -18,10 +18,11 @@ Collaborators:
 </ul>
 
 
-To see our progress, please ```git clone``` the repo and then ```cd``` into it. </br>
+To see our progress, please ```git clone``` the repo and then ```cd blackbox``` into it. </br>
 
 After that, here's how to run the application: </br>
 ```
+git pull origin 
 npm install
 ```
 ^ This installs the node modules neccessary to run the app. <br/>
