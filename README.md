@@ -38,7 +38,19 @@ npm run dev
 
 ### Week 3
 
-Aanand's work here
+<ul>
+  <li>
+   Environment Setup - Configuring VS code IDE to GitHub repo to all team members - Completed 
+  </li>
+  <li>
+    Prisma Database model for storing users' information and MongoDB Setup - Completed 
+    (MongoDB is setup with Aanand email (yamit058@gmail.com)
+  </li>
+  <li>
+    Environment Setup - Next Js and Tailwind Configuration - Completed
+  </li>
+</ul>
+[*Aanand Aman*]
 
 ### Week 4
 
