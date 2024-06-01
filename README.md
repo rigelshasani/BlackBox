@@ -47,17 +47,20 @@ npm run dev
     (MongoDB is setup with Aanand email (yamit058@gmail.com)
   </li>
   <li>
-    Environment Setup - Next Js and Tailwind Configuration - Completed
+    Environment Setup - Next Js and Tailwind Configuration - Completed 
   </li>
+  [Aanand Aman]
 </ul>
-[*Aanand Aman*]
+
+
 
 <ul>
   <li>
    Auth-UI (Sign In Frontend Page) with Forms - Completed 
   </li>
+  [Gaganjeet Singh Vaid]
 </ul>
-[*Gaganjeet Singh Vaid*]
+
 
 ### Week 4
 
