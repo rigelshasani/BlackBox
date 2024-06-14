@@ -18,7 +18,7 @@ const LoginPage = () => {
             className="mx-auto w-auto mt-6"
             src="/images/logo.png"
           />
-          <h2 className="mt-6 mb-6 text-center text-3xl font-bold tracking-tight text-white">
+          <h2 className="mt-6 mb-6 text-center text-3xl font-bold tracking-tight text-black">
             <i>Sign into your account</i>
           </h2>
         </div>
