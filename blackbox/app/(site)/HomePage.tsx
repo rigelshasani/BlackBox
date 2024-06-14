@@ -25,8 +25,12 @@ const HomePage = () => {
             className="mx-auto w-auto mt-6"
             src="/images/logo.png"
           />
+          <div className="bg-white p-2 rounded-lg shadow-md">
+            <h1 className="text-center text-3xl font-bold text-black mt-1">
+              Welcome to <i>BlackBox</i>
+            </h1>
+          </div>
         </div>
-        <h1 className="text-4xl font-bold text-white">Welcome to BlackBox</h1>
         <Button onClick={navigateToLogin} className="mt-6">
           Go to Login/Signup
         </Button>
