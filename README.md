@@ -83,3 +83,17 @@ Created registration authentication options using Prisma and NextAuth, which off
 
 ### Week 5
 
+<ul>
+  <li>
+   Dashboard Login Page(Frontend Design) - (Gagan) 
+  </li>
+  <li>
+   Confirming Users Creation in Database (MongoDB) - (Aanand) 
+    (MongoDB is setup with Aanand email (yamit058@gmail.com)
+  </li>
+  <li>
+    Text Field Validation ( Frontend and Backend Coding) - (Aanand)
+  </li>
+</ul>
+
+
