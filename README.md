@@ -102,6 +102,6 @@ Created registration authentication options using Prisma and NextAuth, which off
 
 ### Week 6
 
-Used p5.js to put a cool background into both the landing page and the login screen. More changes to come.
+Used p5.js to put a cool background into both the landing page and the login screen. More changes to come.[*Rigels Hasani*]
 
 
