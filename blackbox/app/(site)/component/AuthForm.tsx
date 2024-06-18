@@ -133,7 +133,7 @@ const AuthForm = () => {
         <form
           className="space-y-6"
           onSubmit={handleSubmit(onSubmit)}>
-          {variant == 'REGISTER' && (
+          {variant === 'REGISTER' && (
             <Input
               label="Name or Username"
               id="name"
@@ -168,6 +168,7 @@ const AuthForm = () => {
             </Button>
           </div>
         </form>
+
         <div className="mt-6">
           <div className="relative">
             <div
@@ -200,6 +201,7 @@ const AuthForm = () => {
               </span>
             </div>
           </div>
+
           <div className="mt-6 flex gap-2">
             <AuthSocialButton
               icon={BsGithub}
@@ -209,7 +211,6 @@ const AuthForm = () => {
               icon={BsGoogle}
               onClick={() => socialAction('google')}
             />
-
           </div>
         </div>
 
@@ -223,13 +224,13 @@ const AuthForm = () => {
                   text-white
                   ">
           <div>
-            {variant == 'LOGIN' ? 'New to Blackbox?' : 'Already have an account?'}
+            {variant === 'LOGIN' ? 'New to Blackbox?' : 'Already have an account?'}
           </div>
           <div
             onClick={toggleVariant}
             className="underline cursor-pointer"
           >
-            {variant == 'LOGIN' ? 'Create an account' : 'Login'}
+            {variant === 'LOGIN' ? 'Create an Account' : 'Login'}
 
           </div>
 
