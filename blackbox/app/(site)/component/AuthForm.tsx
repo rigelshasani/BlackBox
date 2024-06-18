@@ -12,13 +12,13 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
 
-type variant = 'LOGIN' | 'REGISTER';
+type Variant = 'LOGIN' | 'REGISTER';
 
 const AuthForm = () => {
   const session = useSession();
   const router = useRouter();
 
-  const [variant, setVariant] = useState<variant>('LOGIN');
+  const [variant, setVariant] = useState<Variant>('LOGIN');
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const AuthForm = () => {
 
 
   const toggleVariant = useCallback(() => {
-    if (variant == 'LOGIN') {
+    if (variant === 'LOGIN') {
       setVariant('REGISTER');
     } else {
       setVariant('LOGIN');
