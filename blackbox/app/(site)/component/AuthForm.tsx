@@ -56,7 +56,7 @@ const AuthForm = () => {
     setIsLoading(true);
 
 
-    if (variant == 'REGISTER') {
+    if (variant === 'REGISTER') {
       axios.post('/api/register', data)
 
         .then((response) => {
@@ -73,7 +73,7 @@ const AuthForm = () => {
     }
 
 
-    if (variant == 'LOGIN') {
+    if (variant === 'LOGIN') {
 
       signIn('credentials', {
         ...data,
