@@ -1,5 +1,6 @@
+
 import React, { useEffect, useRef } from 'react';
-import p5 from 'p5';
+import dynamic from 'next/dynamic';
 
 const P5Background = () => {
   const myRef = useRef(null);
@@ -115,11 +116,15 @@ const P5Background = () => {
   };
 
   useEffect(() => {
-    const myP5 = new p5(Sketch, myRef.current);
-    return () => myP5.remove(); // Clean up the p5 instance on component unmount
+    let myP5;
+    if (typeof window !== 'undefined') {
+      const p5 = require('p5');
+      myP5 = new p5(Sketch, myRef.current);
+    }
+    return () => myP5 && myP5.remove(); // Clean up the p5 instance on component unmount
   }, []);
 
   return <div ref={myRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />;
 };
 
-export default P5Background;
+export default dynamic(() => Promise.resolve(P5Background), { ssr: false });
