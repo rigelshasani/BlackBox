@@ -25,7 +25,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 }) => {
   const otherUser = useOtherUser(data);
   const [confirmOpen, setConfirmOpen] = useState(false);
- 
+  
 
   const joinedDate = useMemo(() => {
     return format(new Date(otherUser.createAt), 'PP');
@@ -40,12 +40,15 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
       return `${data.users.length} members`;
     }
 
-    return  'Active' ;
-  }, [data]);
+    return 'Active' ;
+  }, [data ]);
 
   return (
     <>
-      
+      <ConfirmModal
+        isOpen={confirmOpen}
+        onClose={() => setConfirmOpen(false)}
+      />
       <Transition show={isOpen} as={Fragment}>
         <Dialog as="div" className="relative z-50" onClose={onClose}>
           <TransitionChild
@@ -158,9 +161,13 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                         <div className="
                           flex flex-col items-center
                         ">
-                          <div className="mb-2">
+                          {/* <div className="mb-2">
+                            {data.isGroup ? (
+                              <AvatarGroup users={data.users} />
+                            ) : (
                               <Avatar user={otherUser} />
-                          </div>
+                            )}
+                          </div> */}
                           <div>
                             {title}
                           </div>
