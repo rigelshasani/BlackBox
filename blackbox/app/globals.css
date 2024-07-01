@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-html, body, #__next, .relative {
+.home-page,
+.login-page {
   height: 100%;
   width: 100%;
   margin: 0;
@@ -10,11 +11,13 @@ html, body, #__next, .relative {
   overflow: hidden;
 }
 
-.relative {
+.home-page .relative,
+.login-page .relative {
   position: relative;
 }
 
-.absolute {
+.home-page .absolute,
+.login-page .absolute {
   position: absolute;
   top: 0;
   left: 0;
