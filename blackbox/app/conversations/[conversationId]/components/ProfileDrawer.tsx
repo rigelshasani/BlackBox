@@ -8,6 +8,7 @@ import { Dialog, DialogPanel, Transition, TransitionChild } from "@headlessui/re
 import { IoClose, IoTrash } from "react-icons/io5";
 import Avatar from "@/app/components/Avatar";
 import ConfirmModal from "./ConfirmModal";
+import AvatarGroup from "@/app/components/AvatarGroup";
 
 
 interface ProfileDrawerProps {
@@ -25,7 +26,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
 }) => {
   const otherUser = useOtherUser(data);
   const [confirmOpen, setConfirmOpen] = useState(false);
-  
+
 
   const joinedDate = useMemo(() => {
     return format(new Date(otherUser.createAt), 'PP');
@@ -40,8 +41,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
       return `${data.users.length} members`;
     }
 
-    return 'Active' ;
-  }, [data ]);
+    return 'Active';
+  }, [data]);
 
   return (
     <>
@@ -120,7 +121,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                       "
                     >
                       <div className="px-4 sm:px-6">
-                        <div 
+                        <div
                           className="
                             flex
                             items-start
@@ -161,13 +162,13 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                         <div className="
                           flex flex-col items-center
                         ">
-                          {/* <div className="mb-2">
+                          <div className="mb-2">
                             {data.isGroup ? (
                               <AvatarGroup users={data.users} />
                             ) : (
                               <Avatar user={otherUser} />
                             )}
-                          </div> */}
+                          </div>
                           <div>
                             {title}
                           </div>
@@ -240,7 +241,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                       sm:flex-shrink-0
                                     "
                                   >
-                                    Emails
+                                   Members Emails
                                   </dt>
                                   <dd
                                     className="
@@ -250,8 +251,11 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
                                       sm:col-span-2
                                     "
                                   >
-                                    {data.users.map((user) => user.email).join(', ')}
+                                    {data.users.map((user) => (
+                                      <div key={user.email}>{user.email}</div>
+                                    ))}
                                   </dd>
+
                                 </div>
                               )}
                               {!data.isGroup && (
@@ -322,7 +326,7 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({
         </Dialog>
       </Transition>
     </>
-   );
+  );
 }
- 
+
 export default ProfileDrawer;
