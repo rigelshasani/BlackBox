@@ -74,13 +74,14 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
           flex
           items-center
           space-x-3
-          hover:bg-neutral-100
+          hover:bg-stone-400
           rounded-lg
           transition
           cursor-pointer
           p-3
+          m-1
           `,
-        selected ? "bg-neutral-100" : "bg-white"
+        selected ? "bg-neutral-100" : "bg-neutral-700"
       )}
     >
       {data.isGroup ?(
@@ -101,8 +102,7 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
           </div>
           <p
             className={clsx(
-              `
-                truncate
+              `truncate
                 text-sm`,
               hasSeen ? "text-gray-500" : "text-black font-medium"
             )}
