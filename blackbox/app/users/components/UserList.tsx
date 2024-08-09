@@ -26,6 +26,7 @@ const UserList: React.FC<UserListProps> = ({
               block
               w-full
               left-0
+              bg-neutral-950
               "
               >
                 <div className="px-5">
@@ -33,7 +34,7 @@ const UserList: React.FC<UserListProps> = ({
                         <div className="
                           text-2xl
                           font-bold
-                          text-neutral-800
+                          text-white
                           py-4
 
                         ">

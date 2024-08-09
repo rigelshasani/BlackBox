@@ -43,21 +43,23 @@ const UserBox: React.FC<UserBoxProps> = ({
         flex
         items-center
         space-x-3
-        bg-white
+        bg-neutral-700
         p-3
-        hover:bg-neutral-100
+        hover:bg-stone-400
         rounded-lg
         transition
         cursor-pointer
+        m-1
       "
       >
 
+        <Avatar user={data} />
         <div className="min-w-0 flex-1">
           <div className="focus:outline-none">
             <div className="flex justify-between items-center mb-1">
-              <p className="text-sm flex font-bold text-grey-900">
+              <p className="text-sm flex font-bold text-white">
 
-                <Avatar user={data} />
+               
                 {data.name}
 
               </p>
