@@ -1,9 +1,9 @@
-"use client"; // Ensure this is treated as a client component
+"use client"; 
 
 import React from "react";
 import Image from "next/image";
-import AuthForm from "../(site)/component/AuthForm"; // Adjust the import path if necessary
-import P5Background from "./background"; // Ensure this path is correct
+import AuthForm from "../(site)/component/AuthForm"; 
+import P5Background from "../(site)/p5Background"; 
 
 const LoginPage = () => {
   return (
