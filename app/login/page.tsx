@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import AuthForm from "../(site)/component/AuthForm"; 
-import P5Background from "./background"; 
+import P5Background from "../(site)/p5Background2"
 
 const LoginPage = () => {
   return (
