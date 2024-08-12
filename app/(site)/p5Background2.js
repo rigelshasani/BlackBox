@@ -12,7 +12,7 @@ const P5Background = () => {
         let particles = [];
         let flowfield;
         const inc = 0.1;
-        const scl = 20; // Adjusted scale for more detail
+        const scl = 20; 
         let cols, rows;
         let zoff = 0;
 
@@ -22,10 +22,10 @@ const P5Background = () => {
           rows = p.floor(p.height / scl);
           flowfield = new Array(cols * rows);
           
-          for (let i = 0; i < 1000; i++) { // Increased number of particles
+          for (let i = 0; i < 1000; i++) { 
             particles[i] = new Particle(p);
           }
-          p.background(255); // Set background to white
+          p.background(255); 
         };
 
         p.draw = () => {
@@ -86,8 +86,8 @@ const P5Background = () => {
           }
 
           show() {
-            p.stroke(0, 50); // Increased opacity for better visibility
-            p.strokeWeight(1); // Change this value to adjust line thickness
+            p.stroke(0, 50); 
+            p.strokeWeight(1); 
             p.line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
             this.updatePrev();
           }
@@ -119,7 +119,7 @@ const P5Background = () => {
       };
 
       const myP5 = new p5(Sketch, myRef.current);
-      return () => myP5.remove(); // Clean up the p5 instance on component unmount
+      return () => myP5.remove(); 
     }
   }, []);
 

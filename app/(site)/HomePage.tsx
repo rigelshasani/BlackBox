@@ -3,7 +3,7 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import Button from "../components/Button";
-import P5Background from "./p5Background"; // Ensure this path is correct
+import P5Background from "./p5Background"; 
 import Image from "next/image";
 
 const HomePage = () => {

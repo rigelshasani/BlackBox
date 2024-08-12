@@ -22,7 +22,7 @@ const P5Background = () => {
       for (let i = 0; i < 300; i++) {
         particles[i] = new Particle(p);
       }
-      p.background(0); // Set background to black
+      p.background(0); 
     };
 
     p.draw = () => {
@@ -59,7 +59,7 @@ const P5Background = () => {
         this.pos = p.createVector(p.random(p.width), p.random(p.height));
         this.vel = p.createVector(0, 0);
         this.acc = p.createVector(0, 0);
-        this.maxSpeed = 5; // Increase speed to make lines move faster
+        this.maxSpeed = 5; 
         this.prevPos = this.pos.copy();
       }
 
@@ -83,7 +83,7 @@ const P5Background = () => {
       }
 
       show() {
-        p.stroke(255, 100); // Set stroke to white with some transparency
+        p.stroke(255, 100); 
         p.strokeWeight(1);
         p.line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
         this.updatePrev();
@@ -121,7 +121,7 @@ const P5Background = () => {
       const p5 = require('p5');
       myP5 = new p5(Sketch, myRef.current);
     }
-    return () => myP5 && myP5.remove(); // Clean up the p5 instance on component unmount
+    return () => myP5 && myP5.remove(); 
   }, []);
 
   return <div ref={myRef} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }} />;
