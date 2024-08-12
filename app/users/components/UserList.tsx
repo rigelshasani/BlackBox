@@ -24,7 +24,7 @@ const UserList: React.FC<UserListProps> = ({
               border-r
               border-gray-200
               block
-              w-full
+              h-full
               left-0
               bg-neutral-950
               "
