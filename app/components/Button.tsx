@@ -10,7 +10,7 @@ interface ButtonProps {
     secondary?: boolean;
     danger?: boolean;
     disabled?: boolean;
-    className?: string; // Add className prop
+    className?: string; 
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -21,7 +21,7 @@ const Button: React.FC<ButtonProps> = ({
     secondary,
     danger,
     disabled,
-    className // Destructure className
+    className 
 }) => {
     return (
         <button
@@ -46,7 +46,7 @@ const Button: React.FC<ButtonProps> = ({
                 secondary ? 'text-gray-900' : 'text-white',
                 danger && "bg-rose-500 hover:bg-rose-600 focus-visible:outline-rose-600",
                 !secondary && !danger && "bg-orange-600 hover:bg-orange-300 focus-visible:outline-orange-600",
-                className // Include className
+                className 
             )}
         >
             {children}

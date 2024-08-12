@@ -21,7 +21,7 @@ export async function POST(
       return new NextResponse('Unauthorized', { status: 401 });
     }
 
-    // Find the existing conversation
+    
     const conversation = await prisma.conversation.findUnique({
       where: {
         id: conversationId
@@ -40,14 +40,14 @@ export async function POST(
       return new NextResponse('Invalid ID', { status: 400 });
     }
 
-    // Find the last message
+   
     const lastMessage = conversation.messages[conversation.messages.length - 1];
 
     if (!lastMessage) {
       return NextResponse.json(conversation);
     }
 
-    // Update seen of last message
+  
     const updatedMessage = await prisma.message.update({
       where: {
         id: lastMessage.id
