@@ -4,6 +4,7 @@ import Button from "@/app/components/Button";
 import Modal from "@/app/components/Modal";
 import Select from "@/app/components/inputs/Select";
 import Input from "@/app/components/inputs/input";
+import Input2 from "@/app/components/inputs/input2";
 import { User } from "@prisma/client";
 import axios from "axios";
 import { useRouter } from "next/navigation";
@@ -90,9 +91,10 @@ const GroupChatModal: React.FC<GroupChatModalProps> = ({
                 flex
                 flex-col
                 gap-y-8
+                
               "
             >
-              <Input
+              <Input2
                 register={register}
                 label="Name"
                 id="name"
