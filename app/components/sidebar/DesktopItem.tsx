@@ -43,6 +43,7 @@ const DesktopItem: React.FC<DesktopItemProps> = ({
         `,
           active && 'bg-zinc-900 text-black'
         )}
+        title={label}
       >
         <Icon className="h-6 w-6 shrink-0" />
         <span className="sr-only">{label}</span>
